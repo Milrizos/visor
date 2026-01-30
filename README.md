@@ -30,9 +30,13 @@ Un visualizador de imágenes minimalista, flotante y sin bordes diseñado para K
 
 ## 🛠️ Instalación
 
-### 1. Requisitos previos
-Necesitas Python 3 y las librerías de Qt.
+### Opción 1: Mediante mi Repositorio APT (Recomendado)
+Esta es la forma más fácil. Al instalarlo así, el sistema gestionará las dependencias automáticamente y creará un acceso directo en tu menú de aplicaciones de Kubuntu.
 
 ```bash
-sudo apt install python3-pip
-pip install -r requirements.txt
+# 1. Añadir el repositorio a tu sistema
+echo "deb [trusted=yes] https://raw.githubusercontent.com/Milrizos/repo/main/ ./" | sudo tee /etc/apt/sources.list.d/milrizos-repo.list
+
+# 2. Actualizar e instalar
+sudo apt update
+sudo apt install visor
