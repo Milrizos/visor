@@ -30,13 +30,45 @@ Un visualizador de imágenes minimalista, flotante y sin bordes diseñado para K
 
 ## 🛠️ Instalación
 
-### Opción 1: Mediante mi Repositorio APT (Recomendado)
-Esta es la forma más fácil. Al instalarlo así, el sistema gestionará las dependencias automáticamente y creará un acceso directo en tu menú de aplicaciones de Kubuntu.
-
+### Opción 1: Repositorio APT (Recomendado para actualizaciones)
+Al instalarlo así, el sistema gestionará las dependencias automáticamente.
 ```bash
-# 1. Añadir el repositorio a tu sistema
 echo "deb [trusted=yes] https://raw.githubusercontent.com/Milrizos/repo/main/ ./" | sudo tee /etc/apt/sources.list.d/milrizos-repo.list
-
-# 2. Actualizar e instalar
 sudo apt update
 sudo apt install visor
+```
+
+### Opción 2: Descarga Manual del Paquete (.deb)
+Si quieres el instalador sin añadir el repositorio, descarga el paquete directamente:
+1.  **Descargar:** [visor_2.0_all.deb](https://raw.githubusercontent.com/Milrizos/repo/main/pool/main/visor_2.0_all.deb)
+2.  **Instalar:** Abre el archivo con el instalador de paquetes de Kubuntu (GDebi o Discover) o usa la terminal:
+    ```bash
+    sudo apt install ./visor_2.0_all.deb
+    ```
+
+### Opción 3: Descarga Directa del Script (Portable)
+Si solo quieres el script de Python para ejecutarlo sin instalar nada en el sistema:
+1.  **Descargar el script:**
+    ```bash
+    wget https://raw.githubusercontent.com/Milrizos/visor/main/visor.py
+    ```
+2.  **Instalar dependencias necesarias:**
+    ```bash
+    sudo apt install python3-pyqt6 python3-requests
+    ```
+3.  **Ejecutar:**
+    ```bash
+    python3 visor.py -f
+    ```
+
+## 🚀 Uso desde Terminal
+
+Si lo instalaste vía `apt` o `.deb`, usa el comando `visor`:
+
+* **Abrir una imagen local:** `visor -t imagen.jpg`
+* **Abrir una URL:** `visor -t "https://url-de-la-imagen.png"`
+* **Abrir selector de archivos:** `visor -f`
+* **Modo desacoplado (liberar terminal):** `visor -d -t imagen.jpg`
+
+---
+Hecho con ❤️ por [Milrizos](https://github.com/Milrizos)
