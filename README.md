@@ -34,6 +34,7 @@ Un visualizador de imágenes minimalista, flotante y sin bordes diseñado para K
 Al instalarlo así, el sistema gestionará las dependencias automáticamente.
 ```bash
 echo "deb [trusted=yes] https://raw.githubusercontent.com/Milrizos/repo/main/ ./" | sudo tee /etc/apt/sources.list.d/milrizos-repo.list
+sudo add-apt-repository universe
 sudo apt update
 sudo apt install visor
 ```
